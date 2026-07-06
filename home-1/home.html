@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+        <link 
+  <link 
+  rel="icon" 
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='52' font-size='52'>🍺</text></svg>"
+/>
+    
+  <script>
+  const savedDir = localStorage.getItem("dir");
+  if (savedDir) {
+    document.documentElement.setAttribute("dir", savedDir);
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mash & Ale – Craft brewery & taproom. Award-winning golden ales, IPAs, and stouts brewed with passion. Join our beer club today." />
+  <meta property="og:title" content="Mash & Ale Craft Brewery" />
+  <meta property="og:description" content="Handcrafted golden ales and community-driven taproom experiences." />
+  <meta property="og:type" content="website" />
+  <title>Mash &amp; Ale — Craft Brewery &amp; Taproom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="../global-css/global.css" />
+</head>
+<body>
+
+<!-- ===== BEER BUBBLE CANVAS ===== -->
+<!-- <canvas id="beerCanvas" aria-hidden="true"></canvas> -->
+
+<!-- ===== FOAM CURSOR ===== -->
+<!-- <div id="foamCursor" aria-hidden="true"></div> -->
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar" role="banner">
+  <div class="nav-container">
+
+
+   <!-- <a href="../home-1/home.html" class="nav-logo" aria-label="Mash & Ale Home" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+  
+<img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Mash & Ale Logo" style="height:1.5rem;width:auto;object-fit:contain;filter:sepia(1) saturate(4) hue-rotate(5deg) brightness(1.1);">  
+  <span class="logo-text" style="font-family:var(--font-d);font-size:1.5rem;letter-spacing:.08em;">
+    MASH <em style="color:var(--gold);font-style:normal;">&amp;</em> ALE
+  </span>
+
+</a> -->
+<a href="../home-1/home.html" 
+   class="nav-logo" 
+   aria-label="Mash & Ale Home" 
+   style="
+     display:flex;
+     align-items:flex-end;
+     gap:10px;
+     text-decoration:none;
+   ">
+
+  <span 
+    style="
+      font-size:1.45rem;
+      line-height:1;
+      transform:translateY(-2px);
+      filter:drop-shadow(0 0 8px rgba(242,193,78,.25));
+    "
+  >
+    🍺
+  </span>
+
+  <span 
+    class="logo-text" 
+    style="
+      font-family:var(--font-d);
+      font-size:1.5rem;
+      letter-spacing:.08em;
+      line-height:1;
+    "
+  >
+    MASH <em style="color:var(--gold);font-style:normal;">&amp;</em> ALE
+  </span>
+
+</a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+
+      <!-- HOME -->
+      <div class="nav-item">
+        <a href="home.html" class="nav-link active">Home</a>
+
+        <div class="dropdown">
+          <a href="../home-1/home.html" class="nav-link active">Home Brewery</a>
+          <a href="../home-2/home.html">Taproom Experience</a>
+        </div>
+      </div>
+
+      <a href="../about/about.html" class="nav-link">About</a>
+      <!-- SERVICES -->
+
+
+      <a href="../services/services.html" class="nav-link">Services</a>
+
+      
+
+      <!-- BLOG -->
+<a href="../blogs/blogs.html" class="nav-link">Blogs</a>
+
+      <a href="../contact/contact.html" class="nav-link">Contact</a>
+
+      <a href="../admin/dashboard.html" class="nav-link">Dashboard</a>
+
+    </nav>
+
+    <div class="nav-buttons">
+      <a href="../home-1/home.html#book" 
+   class="nav-link nav-cta"
+   style="
+     display:inline-flex;
+     align-items:center;
+     justify-content:center;
+     gap:6px;
+
+     width:110px;
+     height:38px;
+
+     font-size:.72rem;
+     line-height:1;
+     letter-spacing:.05em;
+     text-transform:uppercase;
+   ">
+  Book Now
+</a>
+
+<a href="../login/login.html" 
+   class="nav-link nav-login"
+   style="
+     display:inline-flex;
+     align-items:center;
+     justify-content:center;
+     gap:6px;
+
+     width:110px;
+     height:38px;
+
+     font-size:.8rem;
+     line-height:1;
+     letter-spacing:.05em;
+     text-transform:uppercase;
+
+     text-decoration:none;
+   ">
+  <i class="fa fa-user"></i> Login
+</a>
+</div>
+    <div class="nav-actions">
+
+
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa fa-moon" id="themeIcon"></i>
+      </button>
+
+<button class="rtl-toggle" id="rtlToggle" aria-label="Toggle RTL">
+  <span id="rtlLabel">LTR</span>
+</button>
+
+      <button class="nav-burger" id="navBurger">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+  <a href="../home-1/home.html" class="mob-link">Home-1</a>
+  <a href="../home-2/home.html" class="mob-link">Home-2</a>
+
+
+
+    <a href="../about/about.html" class="mob-link">About</a>
+
+    <a href="../services/services.html" class="mob-link">Services</a>
+
+
+  
+
+    <a href="../blogs/blogs.html" class="mob-link">Blogs</a>
+
+
+  <a href="../contact/contact.html" class="mob-link">Contact</a>
+
+  <a href="../admin/dashboard.html" class="mob-link">Dashboard</a>
+
+  <a href="#book" class="mob-link mob-cta">Book Now</a>
+
+  <a href="../login/login.html" class="mob-link">Login</a>
+
+</div>
+</header>
+
+<main id="main-content">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="heroHeading">
+    <div class="hero-bg-grain"></div>
+    <div class="hero-liquid" id="heroLiquid"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Est. 2012 · Small Batch · Big Flavor</p>
+      <h1 class="hero-title reveal" id="heroHeading">
+        <span class="line">CRAFTED</span>
+        <span class="line gold-line">GOLDEN</span>
+        <span class="line">PERFECTION</span>
+      </h1>
+      <p class="hero-sub reveal">Hand-brewed ales aged in oak, poured fresh at our taproom every single day. No shortcuts. Just passion, grain, and time.</p>
+      <div class="hero-ctas reveal">
+<a href="#featured" 
+   class="btn btn-primary"
+   style="
+     width:190px;
+     justify-content:center;
+   ">
+  <i class="fa fa-beer"></i> Explore Our Brews
+</a>
+
+<a href="#book" class="btn btn-ghost" style="width:190px; justify-content:center;">
+  Reserve a Table
+</a>
+      </div>
+<div class="hero-stats reveal">
+  <div class="stat">
+    <div class="stat-number">
+      <span class="stat-num" data-count="47">0</span>
+      <span class="stat-plus">+</span>
+    </div>
+    <span class="stat-label">Craft Recipes</span>
+  </div>
+
+  <div class="stat-divider"></div>
+
+  <div class="stat">
+    <div class="stat-number">
+      <span class="stat-num" data-count="12">0</span>
+      <span class="stat-plus">+</span>
+    </div>
+    <span class="stat-label">Awards Won</span>
+  </div>
+
+  <div class="stat-divider"></div>
+
+  <div class="stat">
+    <div class="stat-number">
+      <span class="stat-num" data-count="8500">0</span>
+      <span class="stat-plus">+</span>
+    </div>
+    <span class="stat-label">Members</span>
+  </div>
+</div>
+    </div>
+<div class="hero-glass reveal">
+
+  <!-- ROTATING RING -->
+<svg class="hero-ring" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <path id="ringPath" d="M260,260 m-210,0 a210,210 0 1,1 420,0 a210,210 0 1,1 -420,0"/>
+  </defs>
+
+  <!-- outer decorative track -->
+  <circle cx="260" cy="260" r="212" fill="none" stroke="#F2C14E" stroke-width="1.2" stroke-opacity="0.25" stroke-dasharray="3 8"/>
+  <!-- inner decorative track -->
+  <circle cx="260" cy="260" r="206" fill="none" stroke="#D4A030" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <!-- circular text — dense, no gaps -->
+  <text font-family="'DM Sans', sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.8" fill="#F2C14E">
+    <textPath href="#ringPath" startOffset="0%">
+      CRAFT BEER · EST 2012 · SMALL BATCH · HYDERABAD · HAND BREWED · AGED IN OAK · BIG FLAVOR · AWARD WINNING · TAPROOM · SINCE 2012 · GOLDEN ALE · CRAFT BEER · EST 2012 · SMALL BATCH · HYDERABAD ·
+    </textPath>
+  </text>
+
+  <!-- gold dot markers at cardinal points -->
+  <!-- <g fill="#F2C14E">
+    <circle cx="260" cy="50"  r="3.5"/>
+    <circle cx="470" cy="260" r="3.5"/>
+    <circle cx="260" cy="470" r="3.5"/>
+    <circle cx="50"  cy="260" r="3.5"/>
+  </g> -->
+  <!-- diamond markers at diagonals -->
+  <!-- <g fill="#D4A030">
+    <polygon points="400,86  406,92  400,98  394,92" />
+    <polygon points="434,400 440,406 434,412 428,406"/>
+    <polygon points="86,400  92,406  86,412  80,406" />
+    <polygon points="120,86  126,92  120,98  114,92" />
+  </g> -->
+</svg>
+
+  <!-- MUGS -->
+  <div class="hero-mug-wrap">
+    <style>
+      .mug-left-v2  { animation: clinkLeftV2  3.6s cubic-bezier(0.4,0,0.2,1) 1.4s both; }
+      .mug-right-v2 { animation: clinkRightV2 3.6s cubic-bezier(0.4,0,0.2,1) 1.4s both; }
+      @keyframes clinkLeftV2 {
+        0%   { transform: translateX(0px)  rotate(0deg); }
+        50%  { transform: translateX(22px) rotate(14deg); }
+        62%  { transform: translateX(14px) rotate(11deg); }
+        74%  { transform: translateX(19px) rotate(13deg); }
+        100% { transform: translateX(17px) rotate(12deg); }
+      }
+      @keyframes clinkRightV2 {
+        0%   { transform: translateX(0px)   rotate(0deg); }
+        50%  { transform: translateX(-22px) rotate(-14deg); }
+        62%  { transform: translateX(-14px) rotate(-11deg); }
+        74%  { transform: translateX(-19px) rotate(-13deg); }
+        100% { transform: translateX(-17px) rotate(-12deg); }
+      }
+      .beer-fill-lv2 { animation: fillUpV2 1.8s cubic-bezier(0.4,0,0.2,1) 0.1s both; transform-origin: bottom; }
+      .beer-fill-rv2 { animation: fillUpV2 1.8s cubic-bezier(0.4,0,0.2,1) 0.1s both; transform-origin: bottom; }
+      @keyframes fillUpV2 { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+      .foam-lv2 { animation: foamInV2 1s ease-out 1.7s both; }
+      .foam-rv2 { animation: foamInV2 1s ease-out 1.7s both; }
+      @keyframes foamInV2 { from { opacity:0; transform:scaleX(0.5); } to { opacity:1; transform:scaleX(1); } }
+      .sparkle-v2      { opacity:0; animation: sparkleV2 0.7s ease-out 3.6s both; }
+      .sparkle-v2.s2   { animation-delay: 3.72s !important; }
+      .sparkle-v2.s3   { animation-delay: 3.55s !important; }
+      .sparkle-v2.s4   { animation-delay: 3.78s !important; }
+      .sparkle-v2.s5   { animation-delay: 3.48s !important; }
+      @keyframes sparkleV2 { 0%{opacity:0;transform:scale(0);}45%{opacity:1;transform:scale(1.3);}100%{opacity:0;transform:scale(0.2);} }
+      .mbubble { animation: mbRise var(--dur,2.4s) ease-in var(--delay,0s) infinite; }
+      @keyframes mbRise { 0%{transform:translateY(0) translateX(0);opacity:0.75;}100%{transform:translateY(-170px) translateX(var(--dx,0px));opacity:0;} }
+      .foam-spill-v2 { animation: foamInV2 0.5s ease-out 3.62s both; transform-origin: 186px 72px; }
+    </style>
+    <svg width="100%" viewBox="-30 0 520 370" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="clL">
+          <rect x="22" y="62" width="114" height="224" rx="6"/>
+        </clipPath>
+        <clipPath id="clR">
+          <rect x="240" y="62" width="114" height="224" rx="6"/>
+        </clipPath>
+        <linearGradient id="bgV2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#D4841A"/>
+          <stop offset="30%"  stop-color="#F0A830"/>
+          <stop offset="65%"  stop-color="#E8921A"/>
+          <stop offset="100%" stop-color="#C07010"/>
+        </linearGradient>
+        <linearGradient id="ggV2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#8B6914" stop-opacity="0.92"/>
+          <stop offset="20%"  stop-color="#D4A030" stop-opacity="0.72"/>
+          <stop offset="50%"  stop-color="#F2C14E" stop-opacity="0.52"/>
+          <stop offset="80%"  stop-color="#D4A030" stop-opacity="0.72"/>
+          <stop offset="100%" stop-color="#8B6914" stop-opacity="0.92"/>
+        </linearGradient>
+        <linearGradient id="shV2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#FFF8E7" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#FFF8E7" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="fgV2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#FFFBF0"/>
+          <stop offset="100%" stop-color="#F5E8C0"/>
+        </linearGradient>
+        <linearGradient id="hgV2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#8B6914"/>
+          <stop offset="50%"  stop-color="#D4A030"/>
+          <stop offset="100%" stop-color="#8B6914"/>
+        </linearGradient>
+        <linearGradient id="baV2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#D4A030"/>
+          <stop offset="100%" stop-color="#8B6914"/>
+        </linearGradient>
+      </defs>
+
+      <!-- LEFT MUG -->
+      <g class="mug-left-v2" style="transform-origin:79px 290px;">
+        <path d="M22,108 Q-18,108 -18,155 Q-18,202 22,202" fill="none" stroke="url(#hgV2)" stroke-width="22" stroke-linecap="round"/>
+        <path d="M22,108 Q-12,108 -12,155 Q-12,202 22,202" fill="none" stroke="#F2C14E" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+        <rect x="20" y="60" width="118" height="228" rx="9" fill="url(#ggV2)" stroke="#C4821E" stroke-width="2.5"/>
+        <g clip-path="url(#clL)">
+          <g class="beer-fill-lv2" style="transform-origin:79px 286px;">
+            <rect x="22" y="96" width="114" height="190" fill="url(#bgV2)"/>
+          </g>
+          <rect x="40"  y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.2"/>
+          <rect x="66"  y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.13"/>
+          <rect x="92"  y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.2"/>
+          <rect x="118" y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.13"/>
+          <circle class="mbubble" cx="46"  cy="262" r="3.5" fill="#F2C14E" fill-opacity="0.65" style="--dur:3s;--delay:0.2s;--dx:2px"/>
+          <circle class="mbubble" cx="72"  cy="274" r="2.5" fill="#FFD970" fill-opacity="0.5"  style="--dur:2.6s;--delay:0.8s;--dx:-3px"/>
+          <circle class="mbubble" cx="98"  cy="258" r="4"   fill="#F2C14E" fill-opacity="0.6"  style="--dur:3.2s;--delay:1.3s;--dx:2px"/>
+          <circle class="mbubble" cx="58"  cy="280" r="2.5" fill="#FFD970" fill-opacity="0.45" style="--dur:2.4s;--delay:1.9s;--dx:2px"/>
+          <circle class="mbubble" cx="120" cy="268" r="3"   fill="#F2C14E" fill-opacity="0.55" style="--dur:2.9s;--delay:0.5s;--dx:-2px"/>
+        </g>
+        <rect x="38"  y="62" width="8" height="224" rx="4" fill="#000" fill-opacity="0.07"/>
+        <rect x="64"  y="62" width="8" height="224" rx="4" fill="#FFF" fill-opacity="0.05"/>
+        <rect x="90"  y="62" width="8" height="224" rx="4" fill="#000" fill-opacity="0.07"/>
+        <rect x="116" y="62" width="8" height="224" rx="4" fill="#FFF" fill-opacity="0.05"/>
+        <rect x="22"  y="63" width="20" height="220" rx="7" fill="url(#shV2)"/>
+        <g class="foam-lv2" style="transform-origin:79px 70px;">
+          <ellipse cx="79"  cy="64" rx="60" ry="16" fill="url(#fgV2)"/>
+          <ellipse cx="48"  cy="57" rx="22" ry="15" fill="#FFFBF0"/>
+          <ellipse cx="72"  cy="49" rx="24" ry="16" fill="#FFF8E7"/>
+          <ellipse cx="98"  cy="54" rx="22" ry="14" fill="#FFFBF0"/>
+          <ellipse cx="120" cy="61" rx="18" ry="11" fill="#FFF5DC"/>
+          <ellipse cx="79"  cy="60" rx="58" ry="10" fill="#FFF8E7" fill-opacity="0.55"/>
+          <path d="M42,58 Q54,51 66,58" stroke="#D4B870" stroke-width="1.3" fill="none" stroke-opacity="0.55"/>
+          <path d="M76,49 Q88,42 100,49" stroke="#D4B870" stroke-width="1.3" fill="none" stroke-opacity="0.55"/>
+          <path d="M56,66 Q70,62 84,66" stroke="#D4B870" stroke-width="1.1" fill="none" stroke-opacity="0.4"/>
+        </g>
+        <path d="M20,69 Q20,60 29,60 L129,60 Q138,60 138,69" fill="none" stroke="#C4821E" stroke-width="2.5"/>
+        <rect x="20"  y="288" width="118" height="20" rx="7" fill="url(#baV2)" stroke="#C4821E" stroke-width="1.5"/>
+        <rect x="20"  y="288" width="118" height="7"  rx="3.5" fill="#F2C14E" fill-opacity="0.28"/>
+      </g>
+
+      <!-- RIGHT MUG -->
+      <g class="mug-right-v2" style="transform-origin:297px 290px;">
+        <path d="M354,108 Q394,108 394,155 Q394,202 354,202" fill="none" stroke="url(#hgV2)" stroke-width="22" stroke-linecap="round"/>
+        <path d="M354,108 Q388,108 388,155 Q388,202 354,202" fill="none" stroke="#F2C14E" stroke-width="7" stroke-linecap="round" stroke-opacity="0.4"/>
+        <rect x="238" y="60" width="118" height="228" rx="9" fill="url(#ggV2)" stroke="#C4821E" stroke-width="2.5"/>
+        <g clip-path="url(#clR)">
+          <g class="beer-fill-rv2" style="transform-origin:297px 286px;">
+            <rect x="240" y="96" width="114" height="190" fill="url(#bgV2)"/>
+          </g>
+          <rect x="258" y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.2"/>
+          <rect x="284" y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.13"/>
+          <rect x="310" y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.2"/>
+          <rect x="336" y="104" width="7" height="176" rx="3.5" fill="#F2C14E" fill-opacity="0.13"/>
+          <circle class="mbubble" cx="264" cy="262" r="3.5" fill="#F2C14E" fill-opacity="0.65" style="--dur:2.8s;--delay:0.6s;--dx:2px"/>
+          <circle class="mbubble" cx="290" cy="276" r="2.5" fill="#FFD970" fill-opacity="0.5"  style="--dur:3.1s;--delay:1.0s;--dx:-2px"/>
+          <circle class="mbubble" cx="316" cy="260" r="4"   fill="#F2C14E" fill-opacity="0.6"  style="--dur:2.5s;--delay:1.5s;--dx:-3px"/>
+          <circle class="mbubble" cx="302" cy="280" r="2.5" fill="#FFD970" fill-opacity="0.45" style="--dur:3.3s;--delay:0.2s;--dx:2px"/>
+          <circle class="mbubble" cx="344" cy="270" r="3"   fill="#F2C14E" fill-opacity="0.55" style="--dur:2.7s;--delay:2.0s;--dx:2px"/>
+        </g>
+        <rect x="256" y="62" width="8" height="224" rx="4" fill="#000" fill-opacity="0.07"/>
+        <rect x="282" y="62" width="8" height="224" rx="4" fill="#FFF" fill-opacity="0.05"/>
+        <rect x="308" y="62" width="8" height="224" rx="4" fill="#000" fill-opacity="0.07"/>
+        <rect x="334" y="62" width="8" height="224" rx="4" fill="#FFF" fill-opacity="0.05"/>
+        <rect x="240" y="63" width="20" height="220" rx="7" fill="url(#shV2)"/>
+        <g class="foam-rv2" style="transform-origin:297px 70px;">
+          <ellipse cx="297" cy="64" rx="60" ry="16" fill="url(#fgV2)"/>
+          <ellipse cx="266" cy="57" rx="22" ry="15" fill="#FFFBF0"/>
+          <ellipse cx="290" cy="49" rx="24" ry="16" fill="#FFF8E7"/>
+          <ellipse cx="316" cy="54" rx="22" ry="14" fill="#FFFBF0"/>
+          <ellipse cx="338" cy="61" rx="18" ry="11" fill="#FFF5DC"/>
+          <ellipse cx="297" cy="60" rx="58" ry="10" fill="#FFF8E7" fill-opacity="0.55"/>
+          <path d="M260,58 Q272,51 284,58" stroke="#D4B870" stroke-width="1.3" fill="none" stroke-opacity="0.55"/>
+          <path d="M294,49 Q306,42 318,49" stroke="#D4B870" stroke-width="1.3" fill="none" stroke-opacity="0.55"/>
+          <path d="M274,66 Q288,62 302,66" stroke="#D4B870" stroke-width="1.1" fill="none" stroke-opacity="0.4"/>
+        </g>
+        <path d="M238,69 Q238,60 247,60 L347,60 Q356,60 356,69" fill="none" stroke="#C4821E" stroke-width="2.5"/>
+        <rect x="238" y="288" width="118" height="20" rx="7" fill="url(#baV2)" stroke="#C4821E" stroke-width="1.5"/>
+        <rect x="238" y="288" width="118" height="7"  rx="3.5" fill="#F2C14E" fill-opacity="0.28"/>
+      </g>
+
+      <!-- SPARKLES -->
+      <line class="sparkle-v2"    x1="186" y1="72" x2="186" y2="34" stroke="#FFD970" stroke-width="3"   stroke-linecap="round"/>
+      <line class="sparkle-v2 s2" x1="186" y1="72" x2="214" y2="44" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round"/>
+      <line class="sparkle-v2 s3" x1="186" y1="72" x2="158" y2="44" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round"/>
+      <line class="sparkle-v2 s4" x1="186" y1="72" x2="220" y2="66" stroke="#FFD970" stroke-width="2"   stroke-linecap="round"/>
+      <line class="sparkle-v2 s5" x1="186" y1="72" x2="152" y2="66" stroke="#FFD970" stroke-width="2"   stroke-linecap="round"/>
+      <circle class="sparkle-v2"    cx="186" cy="34" r="5" fill="#FFD970"/>
+      <circle class="sparkle-v2 s2" cx="214" cy="44" r="4" fill="#F2C14E"/>
+      <circle class="sparkle-v2 s3" cx="158" cy="44" r="4" fill="#F2C14E"/>
+      <circle class="sparkle-v2 s4" cx="220" cy="66" r="3" fill="#FFD970"/>
+      <circle class="sparkle-v2 s5" cx="152" cy="66" r="3" fill="#FFD970"/>
+      <g class="foam-spill-v2">
+        <ellipse cx="186" cy="50" rx="26" ry="12" fill="#FFFBF0" fill-opacity="0.88"/>
+        <ellipse cx="172" cy="42" rx="14" ry="10" fill="#FFF8E7"/>
+        <ellipse cx="200" cy="42" rx="14" ry="10" fill="#FFF8E7"/>
+        <ellipse cx="186" cy="34" rx="12" ry="9"  fill="#FFFBF0"/>
+      </g>
+    </svg>
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- ===== MARQUEE BAND ===== -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span>🍺 Golden Ale</span><span>·</span>
+      <span>🌾 Craft Lager</span><span>·</span>
+      <span>🍂 Amber IPA</span><span>·</span>
+      <span>⚫ Dark Stout</span><span>·</span>
+      <span>🍋 Citrus Wheat</span><span>·</span>
+      <span>🌿 Pale Ale</span><span>·</span>
+      <span>🍺 Golden Ale</span><span>·</span>
+      <span>🌾 Craft Lager</span><span>·</span>
+      <span>🍂 Amber IPA</span><span>·</span>
+      <span>⚫ Dark Stout</span><span>·</span>
+      <span>🍋 Citrus Wheat</span><span>·</span>
+      <span>🌿 Pale Ale</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ===== FEATURED BREWS ===== -->
+<section class="section featured" id="featured" aria-labelledby="featuredHeading">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag">On Tap Now</span>
+      <h2 id="featuredHeading">Our Signature <em>Brews</em></h2>
+      <p>Discover our most loved craft beers.</p>
+    </div>
+
+    <div class="brew-grid">
+
+      <article class="brew-card">
+        <img src="pint-1.webp">
+        <h3>Golden Harvest Ale</h3>
+        <span class="brew-abv">5.2% ABV</span>
+        <p>Warm caramel malt with toasted grain and a smooth finish.</p>
+      </article>
+
+      <article class="brew-card">
+        <img src="pint-2.jpg">
+        <h3>Sunset IPA</h3>
+        <span class="brew-abv">6.8% ABV</span>
+        <p>Citrus-forward IPA brewed with bold Pacific hops.</p>
+      </article>
+
+      <article class="brew-card">
+        <img src="pint-3.webp" alt="Midnight Stout">
+        <h3>Midnight Stout</h3>
+        <span class="brew-abv">7.4% ABV</span>
+        <p>Dark stout with notes of roasted coffee and chocolate.</p>
+      </article>
+
+      <article class="brew-card">
+        <img src="pint-4.webp" alt="Summer Wheat">
+        <h3>Summer Wheat</h3>
+        <span class="brew-abv">4.5% ABV</span>
+        <p>Light wheat beer with lemon zest and coriander.</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- ===== TAPROOM EXPERIENCE ===== -->
+  <section class="section taproom" aria-labelledby="taproomHeading">
+    <div class="taproom-bg"></div>
+    <div class="container taproom-inner">
+      <div class="taproom-text reveal">
+        <span class="section-tag">The Taproom</span>
+        <h2 id="taproomHeading">Where Every Pour<br><em>Tells a Story</em></h2>
+        <p>Our taproom is more than a bar — it's a gathering place. Open beams, warm amber light, and the smell of fresh hops fill the air from noon 'til last call.</p>
+        <ul class="taproom-list">
+          <li><i class="fa fa-check-circle"></i> 24 rotating taps with fresh seasonal brews</li>
+          <li><i class="fa fa-check-circle"></i> Live music every Friday &amp; Saturday night</li>
+          <li><i class="fa fa-check-circle"></i> Guided brewery tours at 2pm &amp; 5pm daily</li>
+          <li><i class="fa fa-check-circle"></i> Private event bookings for up to 120 guests</li>
+        </ul>
+        <a href="#book" class="btn btn-primary">Reserve Your Spot</a>
+      </div>
+      <div class="taproom-visual reveal">
+        <div class="taproom-imgs">
+          <img src="hero-1.avif" alt="Inside the Mash and Ale taproom" loading="lazy" class="tap-img-main" />
+          <img src="hero-2.webp" alt="Beer poured fresh from tap" loading="lazy" class="tap-img-float" />
+        </div>
+        <div class="taproom-badge-wrap">
+          <div class="taproom-badge">
+            <div class="badge-num">24</div>
+            <div class="badge-txt">Taps<br>On Rotation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="section booking" id="book" aria-labelledby="bookingHeading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Reserve a Seat</span>
+        <h2 id="bookingHeading">Book Your <em>Taproom</em> Visit</h2>
+        <p>Secure your spot at the bar or reserve a table for your group.</p>
+      </div>
+      <form class="booking-form reveal" id="bookingForm" novalidate aria-label="Taproom reservation form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookName">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="bookName" name="name" placeholder="Full Name" required aria-required="true" />
+            <span class="form-error" id="bookNameError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="bookEmail">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="bookEmail" name="email" placeholder="you@example.com" required aria-required="true" />
+            <span class="form-error" id="bookEmailError" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookDate">Preferred Date <span aria-hidden="true">*</span></label>
+            <input type="date" id="bookDate" name="date" required aria-required="true" />
+            <span class="form-error" id="bookDateError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="bookGuests">Number of Guests</label>
+            <select id="bookGuests" name="guests">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3-4">3–4 Guests</option>
+              <option value="5-8">5–8 Guests</option>
+              <option value="9+">9+ Guests (Private)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bookNotes">Special Requests</label>
+          <textarea id="bookNotes" name="notes" rows="3" placeholder="Allergies, accessibility needs, birthday celebration…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <i class="fa fa-calendar-check"></i> Confirm Reservation
+        </button>
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          🍺 Reservation received! We'll confirm by email within the hour.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== MEMBERSHIP / BEER CLUB ===== -->
+  <section class="section membership" aria-labelledby="memberHeading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Beer Club</span>
+        <h2 id="memberHeading">Join the <em>Inner Circle</em></h2>
+        <p>Exclusive perks, early access, and a community of craft beer lovers.</p>
+      </div>
+      <div class="membership-cards">
+        <article class="mem-card reveal" tabindex="0">
+          <div class="mem-icon"><i class="fa fa-seedling"></i></div> 
+          <h3>Grain Member</h3>
+          <div class="mem-price">₹999<span>/mo</span></div>
+          <ul class="mem-perks">
+            <li><i class="fa fa-check"></i> 10% off all taproom orders</li>
+            <li><i class="fa fa-check"></i> Monthly newsletter &amp; recipes</li>
+            <li><i class="fa fa-check"></i> Member loyalty points</li>
+            <li class="inactive"><i class="fa fa-times"></i> Early release access</li>
+            <li class="inactive"><i class="fa fa-times"></i> Private events</li>
+          </ul>
+          <a href="../login/login.html" class="btn btn-outline btn-full">Get Started</a>
+        </article>
+        <article class="mem-card mem-featured reveal" tabindex="0">
+          <div class="mem-ribbon">Most Popular</div>
+          <div class="mem-icon">🍺</div>
+          <div class="nl-text"><h3>Hop Master</h3></div>
+          
+          <div class="mem-price">₹2400<span>/mo</span></div>
+          <ul class="mem-perks">
+            <li><i class="fa fa-check"></i><span class="light-white"> 20% off all orders</span></li>
+            <li><i class="fa fa-check"></i><span class="light-white"> 2 free pints/month</span></li>
+            <li><i class="fa fa-check"></i><span class="light-white"> Early limited releases</span></li>
+            <li><i class="fa fa-check"></i><span class="light-white"> Member loyalty points</span></li>
+            <li class="inactive"><i class="fa fa-times"></i><span class="light-white"> Private events</span></li>
+          </ul>
+          <a href="../login/login.html" class="btn btn-primary btn-full">Join Now</a>
+        </article>
+        <article class="mem-card reveal" tabindex="0">
+          <div class="mem-icon"><i class="fa fa-award"></i></div>
+          <h3>Brewmaster</h3>
+          <div class="mem-price">₹4800<span>/mo</span></div>
+          <ul class="mem-perks">
+            <li><i class="fa fa-check"></i> 30% off + free growler fills</li>
+            <li><i class="fa fa-check"></i> VIP private event access</li>
+            <li><i class="fa fa-check"></i> Personalized brew sessions</li>
+            <li><i class="fa fa-check"></i> Early release + gift box</li>
+            <li><i class="fa fa-check"></i> Double loyalty points</li>
+          </ul>
+          <a href="../login/login.html" class="btn btn-outline btn-full">Go Premium</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS ===== -->
+  <section class="section events" aria-labelledby="eventsHeading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Upcoming Events</span>
+        <h2 id="eventsHeading">What's <em>Brewing</em> This Month</h2>
+      </div>
+      <div class="events-list">
+        <article class="event-row reveal" tabindex="0">
+          <div class="event-date"><span class="ev-day">14</span><span class="ev-mon">JUN</span></div>
+          <div class="event-info">
+            <h3>Summer Wheat Release Party</h3>
+            <p>Be the first to taste our brand new Summer Wheat. Live acoustic set by The Fermenters.</p>
+            <div class="event-meta"><i class="fa fa-clock"></i> 6pm – 10pm &nbsp;·&nbsp; <i class="fa fa-map-marker-alt"></i> Main Taproom</div>
+          </div>
+          <a href="#book" class="btn btn-sm btn-outline">BOOK</a>
+        </article>
+        <article class="event-row reveal" tabindex="0">
+          <div class="event-date"><span class="ev-day">21</span><span class="ev-mon">JUN</span></div>
+          <div class="event-info">
+            <h3>Brew &amp; Paired Dinner</h3>
+            <p>Five-course tasting menu perfectly paired with our signature ales. Chef Marcus Holloway.</p>
+            <div class="event-meta"><i class="fa fa-clock"></i> 7pm – 11pm &nbsp;·&nbsp; <i class="fa fa-map-marker-alt"></i> Private Dining Room</div>
+          </div>
+          <a href="#book" class="btn btn-sm btn-outline">BOOK</a>
+        </article>
+        <article class="event-row reveal" tabindex="0">
+          <div class="event-date"><span class="ev-day">28</span><span class="ev-mon">JUN</span></div>
+          <div class="event-info">
+            <h3>Homebrewer's Meetup</h3>
+            <p>Share your craft, swap recipes, and meet our head brewer. Open to all skill levels.</p>
+            <div class="event-meta"><i class="fa fa-clock"></i> 3pm – 7pm &nbsp;·&nbsp; <i class="fa fa-map-marker-alt"></i> Brewery Floor</div>
+          </div>
+          <a href="#book" class="btn btn-sm btn-outline">BOOK</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" aria-labelledby="testimonialsHeading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What Members Say</span>
+        <h2 id="testimonialsHeading">Straight from the <em>Tap</em></h2>
+      </div>
+      <div class="testimonial-slider">
+      <div class="testimonial-track" id="testTrack">
+        <blockquote class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p>"The Golden Harvest Ale is the best beer I've had in years. The taproom atmosphere is electric — like a second home."</p>
+          <footer><cite>— Mohan A., Hop Master Member</cite></footer>
+        </blockquote>
+        <blockquote class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p>"Joined the beer club on a whim and now I can't imagine life without those monthly early-release bottles. Worth every rupee."</p>
+          <footer><cite>— Keerthi R., Brewmaster Member</cite></footer>
+        </blockquote>
+        <blockquote class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p>"Hosted my wedding reception here. The staff were incredible and the custom brew they made for us was out of this world."</p>
+          <footer><cite>— Komala &amp; Vimala., Private Event</cite></footer>
+        </blockquote>
+      
+      </div>
+      </div>
+      <div class="test-dots" id="testDots" aria-label="Testimonial navigation"></div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section newsletter" aria-labelledby="newsletterHeading">
+    <div class="container">
+      <div class="newsletter-inner reveal">
+        <div class="nl-text">
+          <h2 id="newsletterHeading">Never Miss a <em>Drop</em></h2>
+          <p>Get first access to limited releases, event invites, and brewing stories delivered straight to your inbox.</p>
+        </div>
+        <form class="nl-form" id="nlForm" novalidate>
+          <input type="email" id="nlEmail" placeholder="Your email address" required aria-label="Email for newsletter" />
+          <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-foam" aria-hidden="true"></div>
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+<a href="../home-1/home.html" 
+   class="nav-logo" 
+   aria-label="Mash & Ale Home" 
+   style="
+     display:flex;
+     align-items:flex-end;
+     gap:10px;
+     text-decoration:none;
+   ">
+
+  <span 
+    style="
+      font-size:1.45rem;
+      line-height:1;
+      transform:translateY(-2px);
+      filter:drop-shadow(0 0 8px rgba(242,193,78,.25));
+    "
+  >
+    🍺
+  </span>
+
+  <span 
+    class="logo-text" 
+    style="
+      font-family:var(--font-d);
+      font-size:1.5rem;
+      letter-spacing:.08em;
+      line-height:1;
+    "
+  >
+    MASH <em style="color:var(--gold);font-style:normal;">&amp;</em> ALE
+  </span>
+
+</a>
+      <p>Small batch. Big heart.<br>Every pour made with obsession and barley.</p>
+       <div class="footer-contact">
+    <p><i class="fa fa-map-marker-alt"></i> Hyderabad, India</p>
+    <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fa fa-envelope"></i> hello@mashandale.com</p>
+  </div>
+      <div class="footer-social" role="list" aria-label="Social links">
+        <a href="#" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Facebook" role="listitem"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Twitter" role="listitem"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+      </div>
+
+    </div>
+
+    <div class="footer-col">
+  <h4>Explore</h4>
+  <a href="../home-1/home.html">Home Brewery</a>
+  <a href="../home-2/home.html">Taproom Experience</a>
+  <a href="../services/services.html">Our Brews</a>
+  <a href="../service-details/beer-club.html">Beer Club</a>
+  <a href="../service-details/custom-brewing.html">Custom Brewing</a>
+  <a href="../service-details/private-events.html">Private Events</a>
+  <a href="../service-details/taproom-tours.html">Taproom Tours</a>
+  <a href="../service-details/tasting-masterclasses.html">Limited Releases</a>
+  <a href="../service-details/wholesale.html">Wholesale</a>
+  
+</div>
+
+<div class="footer-col">
+  <h4>Visit Us</h4>
+  <a href="../contact/contact.html">Contact</a>
+  <a href="../blog-details/barrel-aging.html">Barrel Aging</a>
+  <a href="../blog-details/beer-calendar-2025.html">Beer Calendar</a>
+  <a href="../blog-details/flagship-ipa.html">Flagship</a>
+  <a href="../blog-details/food-pairing.html">Food Pairing</a>
+  <a href="../blog-details/hop-varieties.html">Hop Varieties</a>
+  <a href="../blog-details/water-chemistry.html">Water Chemistry</a>
+  <a href="../home-1/home.html#book">Book a Table</a>
+  <a href="../about/about.html">About Us</a>
+</div>
+
+<div class="footer-col">
+  <h4>Account & Support</h4>
+
+  <a href="../login/login.html">Sign In</a>
+  <a href="../login/login.html#register">Join Beer Club</a>
+  <a href="../admin/dashboard.html">Admin Dashboard</a>
+  <a href="../home-1/home.html#book">Book a Table</a>
+  <a href="../contact/contact.html">FAQs</a>
+  <a href="../contact/contact.html">Delivery Policy</a>
+  <a href="../contact/contact.html">Returns & Refunds</a>
+  <a href="../contact/contact.html">Track My Order</a>
+                  <a href="https://www.google.com/maps/place/Techechos+Innovation/@17.4522361,78.3882079,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb913aa8118e95:0xafc9ec950d04b87b!8m2!3d17.452231!4d78.3907828!16s%2Fg%2F11yqb0502w"
+             target="_blank" rel="noopener noreferrer"
+             class="ic-link" aria-label="Open in Google Maps">
+            Get Directions <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+          </a>
+</div>
+
+
+
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div style="display:flex; justify-content:space-between; width:100%; padding:0 20px;">
+  <span>🔒 Secure & Confidential</span>
+  <span>⏱ 24/7 Support Available</span>
+</div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Mash &amp; Ale Brewery. All rights reserved. Drink responsibly.</p>
+    <p><a>404</a> · <a>Privacy</a> · <a>Terms</a></p>
+  </div>
+
+  
+</footer>
+
+<script src="home.js"></script>
+<script src="../global-js/global.js"></script>
+
+</body>
+</html>
